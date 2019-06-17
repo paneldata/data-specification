@@ -1,0 +1,10 @@
+# Tabular Data Resource: Attachments
+# ----------------------------------
+
+# Required Properties
+name: attachments
+path: attachments.csv
+
+# Optional Properties
+title: Attachments
+description: A description about the attachments.csv file

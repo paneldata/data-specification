@@ -1,0 +1,10 @@
+# Tabular Data Resource: Questionnaires
+# -------------------------------------
+
+# Required Properties
+name: questionnaires
+path: questionnaires.csv
+
+# Optional Properties
+title: Questionnaires
+description: A description about the questionnaires.csv file

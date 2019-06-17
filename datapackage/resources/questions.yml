@@ -1,0 +1,10 @@
+# Tabular Data Resource: Questions
+# --------------------------------
+
+# Required Properties
+name: questions
+path: questions.csv
+
+# Optional Properties
+title: Questions
+description: A description about the questions.csv file

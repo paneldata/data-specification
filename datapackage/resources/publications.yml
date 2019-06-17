@@ -1,0 +1,10 @@
+# Tabular Data Resource: Publications
+# -----------------------------------
+
+# Required Properties
+name: publications
+path: publications.csv
+
+# Optional Properties
+title: Publications
+description: A description about the publications.csv file

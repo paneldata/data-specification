@@ -1,0 +1,10 @@
+# Tabular Data Resource: Answers
+# ------------------------------
+
+# Required Properties
+name: answers
+path: answers.csv
+
+# Optional Properties
+title: Answers
+description: A description about the answers.csv file

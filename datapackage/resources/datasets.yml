@@ -1,0 +1,10 @@
+# Tabular Data Resource: Datasets
+# -------------------------------
+
+# Required Properties
+name: datasets
+path: datasets.csv
+
+# Optional Properties
+title: Datasets
+description: A description about the datasets.csv file

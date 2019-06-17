@@ -1,0 +1,10 @@
+# Tabular Data Resource: Conceptual datasets
+# ------------------------------------------
+
+# Required Properties
+name: conceptual_datasets
+path: conceptual_datasets.csv
+
+# Optional Properties
+title: Conceptual datasets
+description: A description about the conceptual_datasets.csv file

@@ -1,0 +1,10 @@
+# Tabular Data Resource: Variables
+# --------------------------------
+
+# Required Properties
+name: variables
+path: variables.csv
+
+# Optional Properties
+title: Variables
+description: A description about the variables.csv file
