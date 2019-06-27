@@ -1,66 +1,64 @@
-# Tabular Data Resource: Attachments
-# ----------------------------------
+# Tabular Data Resource: Transformations
+# --------------------------------------
 
 # Required Properties
-name: attachments
-path: attachments.csv
+name: transformations
+path: transformations.csv
 
 # Optional Properties
-title: Attachments
-description: A description about the attachments.csv file
+title: Transformations
+description: A description about the transformations.csv file
 
 # Field Descriptors
 # https://frictionlessdata.io/specs/table-schema/
 schema:
   fields:
-    - name: type
+    - name: origin_study
       type: string
       format: default
       constraints:
         required: true
         maxLength: 255
 
-    - name: study
+    - name: origin_dataset
       type: string
       format: default
       constraints:
         required: true
         maxLength: 255
 
-    - name: dataset
-      type: string
-      format: default
-      constraints:
-        maxLength: 255
-
-    - name: variable
-      type: string
-      format: default
-      constraints:
-        maxLength: 255
-
-    - name: instrument
-      type: string
-      format: default
-      constraints:
-        maxLength: 255
-
-    - name: question
-      type: string
-      format: default
-      constraints:
-        maxLength: 255
-
-    - name: url
-      type: string
-      format: uri
-      constraints:
-        required: true
-        maxLength: 255
-
-    - name: url_text
+    - name: origin_variable
       type: string
       format: default
       constraints:
         required: true
         maxLength: 255
+
+    - name: target_study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: target_dataset
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: target_variable
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+  primaryKey:
+    - origin_study
+    - origin_dataset
+    - origin_variable
+    - target_study
+    - target_dataset
+    - target_variable

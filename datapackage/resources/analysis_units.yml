@@ -20,17 +20,21 @@ schema:
       constraints:
         required: true
         maxLength: 255
+
     - name: label
       title: Label of the analysis unit (English)
       type: string
       format: default
+
     - name: label_de
       title: Label of the analysis unit (German)
       type: string
       format: default
+
     - name: description
       title: Description of the analysis unit (Markdown)
       type: string
       format: default
+
   primaryKey:
     - name

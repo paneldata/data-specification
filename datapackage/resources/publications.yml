@@ -8,3 +8,66 @@ path: publications.csv
 # Optional Properties
 title: Publications
 description: A description about the publications.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: study
+      title: Foreign key to Study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: name
+      title: Name of the Publication
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: title
+      title: Title of the Publication
+      type: string
+      format: default
+      constraints:
+        required: true
+
+    - name: author
+      type: string
+      format: default
+
+    - name: year
+      type: string
+      format: default
+
+    - name: abstract
+      type: string
+      format: default
+
+    - name: cite
+      type: string
+      format: default
+
+    - name: sub_type
+      type: string
+      format: default
+
+    - name: studies
+      type: string
+      format: default
+
+    - name: url
+      type: string
+      format: uri
+
+    - name: doi
+      type: string
+      format: default
+
+  primaryKey:
+    - study
+    - name

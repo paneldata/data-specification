@@ -8,7 +8,7 @@ metadata:
   title: ""
   description: ""
   homepage: ""
-  version:  ""
+  version:  "v34"
   sources:  []
   contributors: []
   keywords: []
@@ -17,5 +17,15 @@ metadata:
 
 files:
   # Select which files to use
+  analysis_units.csv: yes
+  attachments.csv: yes
   concepts.csv: yes
+  concepts_questions.csv: yes
+  conceptual_datasets.csv: yes
+  datasets.csv: yes
+  publications.csv: yes
+  periods.csv: yes
+  questions_variables.csv: yes
   topics.csv: yes
+  transformations.csv: yes
+  variables.csv: yes

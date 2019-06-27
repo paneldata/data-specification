@@ -1,36 +1,33 @@
-# Tabular Data Resource: Variables
-# --------------------------------
+# Tabular Data Resource: Concepts questions
+# -----------------------------------------
 
 # Required Properties
-name: variables
-path: variables.csv
+name: concepts_questions
+path: concepts_questions.csv
 
 # Optional Properties
-title: Variables
-description: A description about the variables.csv file
+title: Concepts questions
+description: A description about the concepts_questions.csv file
 
 # Field Descriptors
 # https://frictionlessdata.io/specs/table-schema/
 schema:
   fields:
     - name: study
-      title: Foreign key to Study
       type: string
       format: default
       constraints:
         required: true
         maxLength: 255
 
-    - name: dataset
-      title: Foreign key to Dataset
+    - name: instrument
       type: string
       format: default
       constraints:
         required: true
         maxLength: 255
 
-    - name: name
-      title: Name of the Variable
+    - name: question
       type: string
       format: default
       constraints:
@@ -41,8 +38,12 @@ schema:
       title: Foreign key to Concept
       type: string
       format: default
+      constraints:
+        required: true
+        maxLength: 255
 
   primaryKey:
     - study
-    - dataset
-    - name
+    - instrument
+    - question
+    - concept
