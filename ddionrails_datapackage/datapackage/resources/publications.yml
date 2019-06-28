@@ -41,8 +41,7 @@ schema:
       format: default
 
     - name: year
-      type: string
-      format: default
+      type: year
 
     - name: abstract
       type: string
@@ -52,7 +51,7 @@ schema:
       type: string
       format: default
 
-    - name: sub_type
+    - name: type
       type: string
       format: default
 
@@ -67,6 +66,9 @@ schema:
     - name: doi
       type: string
       format: default
+      constraints:
+        # https://www.crossref.org/blog/dois-and-matching-regular-expressions/
+        pattern: "^10.\\d{4,9}/[-._;()/:A-z0-9]+$"
 
   primaryKey:
     - study

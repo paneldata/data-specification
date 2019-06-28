@@ -14,13 +14,21 @@ description: A description about the attachments.csv file
 schema:
   fields:
     - name: type
+      title: Type of the attachment
       type: string
       format: default
       constraints:
         required: true
         maxLength: 255
+        enum:
+          - study
+          - dataset
+          - variable
+          - instrument
+          - question
 
     - name: study
+      title: Foreign key to Study
       type: string
       format: default
       constraints:
@@ -28,24 +36,28 @@ schema:
         maxLength: 255
 
     - name: dataset
+      title: Foreign key to Dataset
       type: string
       format: default
       constraints:
         maxLength: 255
 
     - name: variable
+      title: Foreign key to Variable
       type: string
       format: default
       constraints:
         maxLength: 255
 
     - name: instrument
+      title: Foreign key to Instrument
       type: string
       format: default
       constraints:
         maxLength: 255
 
     - name: question
+      title: Foreign key to Question
       type: string
       format: default
       constraints:
@@ -63,4 +75,13 @@ schema:
       format: default
       constraints:
         required: true
-        maxLength: 255
+        maxLength: 40
+
+  primaryKey:
+    - study
+    - dataset
+    - variable
+    - instrument
+    - question
+    - url
+    - url_text

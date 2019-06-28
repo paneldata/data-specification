@@ -3,7 +3,7 @@
 
 from setuptools import find_packages, setup
 
-requirements = ["click>=7.0", "goodtables>=2.0", "pyyaml>=5.0"]
+requirements = ["click>=7.0", "dpath", "goodtables>=2.0", "pyyaml>=5.0"]
 
 setup(
     author="Heinz-Alexander Fuetterer",

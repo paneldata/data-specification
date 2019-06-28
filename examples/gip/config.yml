@@ -1,6 +1,6 @@
 metadata:
   # Recommended Properties
-  name: ddionrails-study
+  name: gip
   id: ""
   licenses: []
 
@@ -17,5 +17,4 @@ metadata:
 
 files:
   # Select which files to use
-  - concepts.csv
-  - topics.csv
+  - questions_images.csv

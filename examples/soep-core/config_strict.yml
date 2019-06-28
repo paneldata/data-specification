@@ -28,4 +28,4 @@ files:
   - questions_variables.csv
   - topics.csv
   - transformations.csv
-  - variables.csv
+  - variables_strict.csv

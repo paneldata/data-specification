@@ -6,6 +6,7 @@ from typing import Dict
 import pkg_resources
 import yaml
 from datapackage import Package
+from dpath.util import merge
 
 DATAPACKAGE_BASE_FILE = pkg_resources.resource_filename(
     "ddionrails_datapackage", "datapackage/descriptor.yml"
@@ -46,11 +47,15 @@ def build(config: Dict) -> None:
 
     # Create a Datapackage object from the descriptor dictionary
     package = Package(descriptor=descriptor)
-    wanted_files = [
-        file.split(".")[0] for file in config["files"] if config["files"][file] is True
-    ]
+    wanted_files = [file.split(".")[0] for file in config["files"]]
     for file in wanted_files:
-        resource = read_tabular_data_resource(file)
+        if "_strict" in file:
+            basic_file = file.replace("_strict", "")
+            resource = read_tabular_data_resource(basic_file)
+            strict_resource = read_tabular_data_resource(file)
+            merge(resource, strict_resource)
+        else:
+            resource = read_tabular_data_resource(file)
         package.add_resource(resource)
     package.commit()
     if package.valid:
