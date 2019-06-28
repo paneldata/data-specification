@@ -1,17 +1,18 @@
 # -*- coding: utf-8 -*-
 
-
 import pathlib
 from typing import Dict
 
+import pkg_resources
 import yaml
-
 from datapackage import Package
 
-DATAPACKAGE_DIRECTORY = pathlib.Path().cwd().joinpath("datapackage")
-DATAPACKAGE_BASE_FILE = DATAPACKAGE_DIRECTORY.joinpath("descriptor.yml")
-DATAPACKAGE_RESOURCES_DIRECTORY = DATAPACKAGE_DIRECTORY.joinpath("resources")
-DATAPACKAGE_BASE_RESOURCE = DATAPACKAGE_RESOURCES_DIRECTORY.joinpath("base.yml")
+DATAPACKAGE_BASE_FILE = pkg_resources.resource_filename(
+    "ddionrails_datapackage", "datapackage/descriptor.yml"
+)
+DATAPACKAGE_BASE_RESOURCE = pkg_resources.resource_filename(
+    "ddionrails_datapackage", "datapackage/resources/base.yml"
+)
 DATAPACKAGE_OUTFILE = pathlib.Path().cwd().joinpath("datapackage.json")
 
 
@@ -24,8 +25,8 @@ def read_yaml(filename: pathlib.Path) -> Dict:
 def read_tabular_data_resource(resource_name: str) -> Dict:
     """ Reads a datapackage resource as YAML file from disk and returns a Python dictionary """
     base_resource = read_yaml(DATAPACKAGE_BASE_RESOURCE)
-    filename = DATAPACKAGE_RESOURCES_DIRECTORY.joinpath(resource_name).with_suffix(
-        ".yml"
+    filename = pkg_resources.resource_filename(
+        "ddionrails_datapackage", f"datapackage/resources/{resource_name}.yml"
     )
     resource = read_yaml(filename)
     resource.update(base_resource)
