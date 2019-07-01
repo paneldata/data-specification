@@ -34,6 +34,11 @@ schema:
       type: string
       format: default
 
+    - name: label_de
+      title: label_de of the Dataset
+      type: string
+      format: default
+
     - name: description
       title: Description of the Dataset
       type: string
