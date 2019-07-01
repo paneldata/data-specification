@@ -34,6 +34,11 @@ schema:
       type: string
       format: default
 
+    - name: label_de
+      title: Label of the Period (German)
+      type: string
+      format: default
+
     - name: description
       title: Description of the Period (Markdown)
       type: string

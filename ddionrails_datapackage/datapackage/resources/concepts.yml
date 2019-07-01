@@ -34,6 +34,11 @@ schema:
       type: string
       format: default
 
+    - name: description
+      title: Description of the Concept
+      type: string
+      format: default
+
     - name: topic
       title: Foreign key to Topic
       type: string
