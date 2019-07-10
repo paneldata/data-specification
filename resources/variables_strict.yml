@@ -1,0 +1,7 @@
+schema:
+  foreignKeys:
+  # Field "concept" points to field "name" in resource "concepts"
+  - fields: concept
+    reference:
+      resource: concepts
+      fields: name
