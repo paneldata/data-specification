@@ -1,0 +1,48 @@
+# Tabular Data Resource: Variables
+# --------------------------------
+
+# Required Properties
+name: variables
+path: variables.csv
+
+# Optional Properties
+title: Variables
+description: A description about the variables.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: study
+      title: Foreign key to Study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: dataset
+      title: Foreign key to Dataset
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: name
+      title: Name of the Variable
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: concept
+      title: Foreign key to Concept
+      type: string
+      format: default
+
+  primaryKey:
+    - study
+    - dataset
+    - name
