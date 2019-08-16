@@ -13,6 +13,14 @@ description: A description about the analysis_units.csv file
 # https://frictionlessdata.io/specs/table-schema/
 schema:
   fields:
+    - name: study
+      title: Foreign key to Study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
     - name: name
       title: Name of the analysis unit
       type: string
@@ -32,9 +40,15 @@ schema:
       format: default
 
     - name: description
-      title: Description of the analysis unit (Markdown)
+      title: Description of the analysis unit (Markdown, English)
+      type: string
+      format: default
+
+    - name: description_de
+      title: Description of the analysis unit (Markdown, German)
       type: string
       format: default
 
   primaryKey:
+    - study
     - name
