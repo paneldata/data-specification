@@ -1,0 +1,30 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: pylint
+        name: run pylint
+        entry: pylint --rcfile=setup.cfg
+        language: system
+        files: '.*.py'
+        pass_filenames: true
+    -   id: pyroma
+        name: check setup.py
+        entry: pyroma .
+        language: system
+        files: 'setup.py'
+        pass_filenames: true
+-   repo: https://github.com/asottile/seed-isort-config
+    rev: 44bc4d3364b054fe7ec1e0a40379b41e44774c46
+    hooks:
+    -   id: seed-isort-config
+-   repo: https://github.com/pre-commit/mirrors-isort
+    rev: dc9ed979dce682545bca4023312d028662744eab
+    hooks:
+    - id: isort
+      args: ["--settings-path", "setup.cfg"]
+-   repo: https://github.com/ambv/black
+    rev: stable
+    hooks:
+    - id: black
+      language_version: python3.6
+      args: ["--line-length", "90"]

@@ -1,0 +1,20 @@
+metadata:
+  # Recommended Properties
+  name: ddionrails-study
+  id: ""
+  licenses: []
+
+  # Optional Properties
+  title: ""
+  description: ""
+  homepage: ""
+  version:  ""
+  sources:  []
+  contributors: []
+  keywords: []
+  image: ""
+  created: ""
+
+files:
+  # Select which files to use
+  - variables.csv
