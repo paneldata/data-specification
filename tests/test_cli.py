@@ -34,6 +34,24 @@ def test_cli_build_with_config(tmp_path):
     assert result.output == ""
 
 
+def test_infer_path(tmp_path):
+    path = tmp_path.joinpath("datapackage.json")
+    result = CliRunner().invoke(
+        cli.cli, ["infer", "tests/data/valid-resource", str(path)]
+    )
+    assert result.exit_code == 0
+    assert result.output == ""
+
+
+def test_infer_strict(tmp_path):
+    path = tmp_path.joinpath("datapackage.json")
+    result = CliRunner().invoke(
+        cli.cli, ["infer", "tests/data/valid-resource", str(path), "--strict"]
+    )
+    assert result.exit_code == 0
+    assert result.output == ""
+
+
 def test_cli_validate_without_argument():
     result = CliRunner().invoke(cli.cli, ["validate"])
     assert result.exit_code == 2
@@ -42,16 +60,45 @@ def test_cli_validate_without_argument():
 
 def test_cli_validate_with_argument_and_missing_file():
     result = CliRunner().invoke(
-        cli.cli, ["validate", "tests/datapackage.json", "tests/data/missing.csv"]
+        cli.cli,
+        ["validate", "tests/data/valid-resource/datapackage.json", "missing-resource"],
     )
-    assert result.exit_code == 2
-    assert "does not exist." in result.output
+    assert result.exit_code == 1
+    assert '"valid": false' in result.output
 
 
 def test_cli_validate_with_argument_existing_file():
     result = CliRunner().invoke(
-        cli.cli,
-        ["validate", "tests/data/datapackage.json", "tests/data/valid/variables.csv"],
+        cli.cli, ["validate", "tests/data/valid-resource/datapackage.json", "variables"]
     )
     assert result.exit_code == 0
     assert '"valid": true' in result.output
+
+
+def test_cli_validate_with_valid_check_relations():
+    """Tests that validate --check-relations follows foreign keys."""
+    result = CliRunner().invoke(
+        cli.cli,
+        [
+            "validate",
+            "tests/data/valid-relations/datapackage.json",
+            "--check-relations",
+        ],
+    )
+    assert result.exit_code == 0
+    assert '"valid": true' in result.output
+
+
+def test_cli_validate_with_invalid_check_relations():
+    """Tests that validate --check-relations follows foreign keys and fails."""
+    result = CliRunner().invoke(
+        cli.cli,
+        [
+            "validate",
+            "tests/data/invalid-relations/datapackage.json",
+            "--check-relations",
+        ],
+    )
+    assert result.exit_code == 0
+    assert '"valid": true' in result.output
+    assert "Foreign key" in result.output

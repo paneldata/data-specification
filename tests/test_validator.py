@@ -6,22 +6,22 @@ from ddionrails_datapackage import validator
 
 
 def test_validate_valid():
-    datapackage_location = "tests/data/datapackage.json"
-    resource_location = "tests/data/valid/variables.csv"
-    result = validator.validate(datapackage_location, resource_location)
+    datapackage_location = "tests/data/valid-resource/datapackage.json"
+    resource_name = "variables"
+    result = validator.validate(datapackage_location, resource_name)
     assert result["valid"]
 
 
 def test_validate_invalid():
-    datapackage_location = "tests/data/datapackage.json"
-    resource_location = "tests/data/invalid/variables.csv"
-    result = validator.validate(datapackage_location, resource_location)
+    resource_name = "variables"
+    datapackage_location = "tests/data/invalid-resource/datapackage.json"
+    result = validator.validate(datapackage_location, resource_name)
     assert not result["valid"]
 
 
 def test_validate_invalid_resource_name():
-    datapackage_location = "tests/data/datapackage.json"
-    resource_location = "tests/data/invalid/invalid.csv"
-    result = validator.validate(datapackage_location, resource_location)
+    datapackage_location = "tests/data/valid-resource/datapackage.json"
+    resource_name = "invalid-resource"
+    result = validator.validate(datapackage_location, resource_name)
     assert not result["valid"]
     assert "unknown" in result["message"]

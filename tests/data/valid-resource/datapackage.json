@@ -1,0 +1,30 @@
+{
+  "profile": "tabular-data-package",
+  "name": "ddionrails-study",
+  "resources": [
+    {
+      "name": "variables",
+      "path": "variables.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "name",
+            "title": "Name of the Variable",
+            "type": "string",
+            "format": "default"
+          }
+        ],
+        "primaryKey": [
+          "name"
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8"
+    }
+  ]
+}

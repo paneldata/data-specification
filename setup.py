@@ -12,7 +12,7 @@ URL = "https://github.com/paneldata/data-specification"
 EMAIL = "hfuetterer@diw.de"
 AUTHOR = "Heinz-Alexander Fütterer"
 REQUIRES_PYTHON = ">=3.6.0"
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 KEYWORDS = ["datapackage", "paneldata", "ddionrails", "data-validation", "jsonschema"]
 LICENSE = "BSD 3-Clause"
 CLASSIFIERS = [
