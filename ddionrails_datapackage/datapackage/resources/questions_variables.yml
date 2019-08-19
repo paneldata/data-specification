@@ -1,0 +1,56 @@
+# Tabular Data Resource: Answers
+# ------------------------------
+
+# Required Properties
+name: questions_variables
+path: questions_variables.csv
+
+# Optional Properties
+title: Questions variables
+description: A description about the questions_variables.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: dataset
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: variable
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: instrument
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: question
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+  primaryKey:
+    - study
+    - dataset
+    - variable
+    - instrument
+    - question

@@ -1,0 +1,45 @@
+# Tabular Data Resource: Conceptual datasets
+# ------------------------------------------
+
+# Required Properties
+name: conceptual_datasets
+path: conceptual_datasets.csv
+
+# Optional Properties
+title: Conceptual datasets
+description: A description about the conceptual_datasets.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: name
+      title: Name of the conceptual dataset
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: label
+      title: Label of the conceptual dataset (English)
+      type: string
+      format: default
+
+    - name: label_de
+      title: Label of the conceptual dataset (German)
+      type: string
+      format: default
+
+    - name: description
+      title: Description of the conceptual dataset (Markdown, English)
+      type: string
+      format: default
+
+    - name: description_de
+      title: Description of the conceptual dataset (Markdown, German)
+      type: string
+      format: default
+
+  primaryKey:
+    - name

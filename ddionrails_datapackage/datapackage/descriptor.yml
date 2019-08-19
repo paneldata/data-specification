@@ -1,0 +1,9 @@
+# Tabular Data Package: Descriptor
+# --------------------------------
+
+# https://frictionlessdata.io/specs/data-package/
+# https://frictionlessdata.io/specs/tabular-data-package/
+
+# Metadata
+# Recommended Properties
+profile: tabular-data-package

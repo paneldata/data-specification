@@ -1,0 +1,12 @@
+metadata:
+  # Recommended Properties
+  name: soep-base
+
+files:
+  # Select which files to use
+  analysis_units.csv: yes
+  conceptual_datasets.csv: yes
+  concepts.csv: yes
+  datasets.csv: yes
+  periods.csv: yes
+  variables.csv: yes

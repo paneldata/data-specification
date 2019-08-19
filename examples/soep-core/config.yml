@@ -1,0 +1,31 @@
+metadata:
+  # Recommended Properties
+  name: soep-core
+  id: 10.5684/soep.v34
+  licenses: []
+
+  # Optional Properties
+  title: ""
+  description: ""
+  homepage: ""
+  version:  "v34"
+  sources:  []
+  contributors: []
+  keywords: []
+  image: ""
+  created: ""
+
+files:
+  # Select which files to use
+  - analysis_units.csv
+  - attachments.csv
+  - concepts.csv
+  - concepts_questions.csv
+  - conceptual_datasets.csv
+  - datasets.csv
+  - publications.csv
+  - periods.csv
+  - questions_variables.csv
+  - topics.csv
+  - transformations.csv
+  - variables.csv

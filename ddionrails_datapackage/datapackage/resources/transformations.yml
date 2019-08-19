@@ -1,0 +1,64 @@
+# Tabular Data Resource: Transformations
+# --------------------------------------
+
+# Required Properties
+name: transformations
+path: transformations.csv
+
+# Optional Properties
+title: Transformations
+description: A description about the transformations.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: origin_study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: origin_dataset
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: origin_variable
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: target_study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: target_dataset
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: target_variable
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+  primaryKey:
+    - origin_study
+    - origin_dataset
+    - origin_variable
+    - target_study
+    - target_dataset
+    - target_variable

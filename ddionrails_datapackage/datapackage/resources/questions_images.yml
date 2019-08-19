@@ -1,0 +1,64 @@
+# Tabular Data Resource: Questions images
+# ---------------------------------------
+
+# Required Properties
+name: questions_images
+path: questions_images.csv
+
+# Optional Properties
+title: Questions images
+description: A description about the questions_images.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: instrument
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: question
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: image_url
+      type: string
+      format: uri
+
+    - name: image_url_de
+      type: string
+      format: uri
+
+    - name: image_label
+      type: string
+      format: default
+      constraints:
+        maxLength: 40
+
+    - name: image_label_de
+      type: string
+      format: default
+      constraints:
+        maxLength: 40
+
+  primaryKey:
+    - study
+    - instrument
+    - question
+    - image_url
+    - image_url_de
+    - image_label
+    - image_label_de

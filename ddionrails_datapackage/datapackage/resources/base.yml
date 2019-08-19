@@ -1,0 +1,14 @@
+# Tabular Data Resource: Base
+# ---------------------------
+
+# https://frictionlessdata.io/specs/data-resource/
+# https://frictionlessdata.io/specs/tabular-data-resource/
+
+# Metadata
+# Recommended Properties
+profile: tabular-data-resource
+
+# Optional Properties
+format: csv
+mediatype: text/csv
+encoding: utf-8

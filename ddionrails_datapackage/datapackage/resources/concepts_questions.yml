@@ -1,0 +1,49 @@
+# Tabular Data Resource: Concepts questions
+# -----------------------------------------
+
+# Required Properties
+name: concepts_questions
+path: concepts_questions.csv
+
+# Optional Properties
+title: Concepts questions
+description: A description about the concepts_questions.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: instrument
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: question
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: concept
+      title: Foreign key to Concept
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+  primaryKey:
+    - study
+    - instrument
+    - question
+    - concept
