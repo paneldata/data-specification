@@ -38,6 +38,9 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(exclude=["tests"]),
+    package_data={
+        "ddionrails_datapackage": ["datapackage/*.yml", "datapackage/resources/*.yml"]
+    },
     entry_points={
         "console_scripts": ["ddionrails-datapackage=ddionrails_datapackage.cli:cli"]
     },
