@@ -37,6 +37,25 @@ def build(config_file: str, datapackage_location: str) -> None:
 
 
 @cli.command()
+@click.argument("metadata_location", type=click.Path(exists=True))
+@click.argument("datapackage_location", type=click.Path(), default="datapackage.json")
+def infer(metadata_location: str, datapackage_location: str) -> None:
+    """Infers a Tabular Data Resource from a given metadata location.
+
+    Args:
+        metadata_location: The path to a metadata location.
+        datapackage_location: The path to create the Tabular Data Package.
+
+    """
+    path = pathlib.Path(metadata_location)
+    csv_files = [str(file.name) for file in sorted(path.glob("*.csv"))]
+    config = {"metadata": {}, "files": csv_files}
+    package = builder.build(config)
+    with open(str(datapackage_location), "w") as outfile:
+        json.dump(package.descriptor, outfile, indent=2)
+
+
+@cli.command()
 @click.argument("datapackage_location", type=click.Path(exists=True))
 @click.argument("resource_location", type=click.Path(exists=True))
 def validate(datapackage_location: str, resource_location: str) -> None:
