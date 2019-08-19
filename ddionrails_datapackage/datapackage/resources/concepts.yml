@@ -35,7 +35,12 @@ schema:
       format: default
 
     - name: description
-      title: Description of the Concept
+      title: Description of the Concept (Markdown, English)
+      type: string
+      format: default
+
+    - name: description_de
+      title: Description of the Concept (Markdown, German)
       type: string
       format: default
 
