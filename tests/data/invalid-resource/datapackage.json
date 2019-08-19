@@ -11,11 +11,7 @@
             "name": "name",
             "title": "Name of the Variable",
             "type": "string",
-            "format": "default",
-            "constraints": {
-              "required": true,
-              "maxLength": 255
-            }
+            "format": "default"
           }
         ],
         "primaryKey": [

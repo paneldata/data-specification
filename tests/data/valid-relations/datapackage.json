@@ -1,0 +1,89 @@
+{
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "datasets",
+      "path": "datasets.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "study",
+            "title": "Foreign key to Study",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "name",
+            "title": "Name of the Dataset",
+            "type": "string",
+            "format": "default"
+          }
+        ],
+        "primaryKey": [
+          "study",
+          "name"
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8"
+    },
+    {
+      "name": "variables",
+      "path": "variables.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "study",
+            "title": "Foreign key to Study",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "dataset",
+            "title": "Foreign key to Dataset",
+            "type": "string",
+            "format": "default"
+          },
+          {
+            "name": "name",
+            "title": "Name of the Variable",
+            "type": "string",
+            "format": "default"
+          }
+        ],
+        "primaryKey": [
+          "study",
+          "dataset",
+          "name"
+        ],
+        "foreignKeys": [
+          {
+            "fields": [
+              "study",
+              "dataset"
+            ],
+            "reference": {
+              "resource": "datasets",
+              "fields": [
+                "study",
+                "name"
+              ]
+            }
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8"
+    }
+  ]
+}
