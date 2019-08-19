@@ -40,7 +40,12 @@ schema:
       format: default
 
     - name: description
-      title: Description of the Dataset
+      title: Description of the Dataset (Markdown, English)
+      type: string
+      format: default
+
+    - name: description_de
+      title: Description of the Dataset (Markdown, German)
       type: string
       format: default
 
