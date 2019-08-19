@@ -32,6 +32,12 @@ schema:
       format: default
 
     - name: description
+      title: Description of the conceptual dataset (Markdown, English)
+      type: string
+      format: default
+
+    - name: description_de
+      title: Description of the conceptual dataset (Markdown, German)
       type: string
       format: default
 
