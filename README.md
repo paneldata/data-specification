@@ -5,18 +5,25 @@
 
 ## Installation
 
-Install library directly from GitHub with [pipenv](https://github.com/pypa/pipenv).
+Install library from GitHub:
+
+```shell
+$ pip install git+https://github.com/paneldata/data-specification
+```
+
+Or using [pipenv](https://github.com/pypa/pipenv):
 
 ```shell
 $ pip install --upgrade pipenv
 $ pipenv shell
-$ pipenv install git+https://github.com/paneldata/data-specification@datapackage-directory#egg=ddionrails_datapackage
+$ pipenv install git+https://github.com/paneldata/master@datapackage-directory#egg=ddionrails_datapackage
 ```
 
 ## Usage
 ```shell
 # Build a datapackage.json for soep-core
 $ git clone https://github.com/paneldata/data-specification.git
+$ cd data-specification/
 $ ddionrails-datapackage build examples/soep-core/config.yml
 ```
 
