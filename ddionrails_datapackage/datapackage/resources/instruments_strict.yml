@@ -1,0 +1,27 @@
+# Tabular Data Resource: Instruments
+# ----------------------------------
+# extends "instruments.yml"
+
+schema:
+  foreignKeys:
+  # https://frictionlessdata.io/specs/table-schema/#foreign-keys
+  # Fields "study,analysis_unit" point to
+  # fields "study,name" in resource "analysis_units"
+  - fields:
+      - study
+      - analysis_unit
+    reference:
+      resource: analysis_units
+      fields:
+        - study
+        - name
+  # Fields "study,period" point to
+  # fields "study,name" in resource "periods"
+  - fields:
+      - study
+      - period
+    reference:
+      resource: periods
+      fields:
+        - study
+        - name
