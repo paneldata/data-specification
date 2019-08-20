@@ -1,0 +1,17 @@
+# Tabular Data Resource: Concepts
+# -------------------------------
+# extends "concepts.yml"
+
+schema:
+  foreignKeys:
+  # https://frictionlessdata.io/specs/table-schema/#foreign-keys
+    # Fields "study,topic" point to
+    # fields "study,name" in resource "topics"
+  - fields:
+      - study
+      - topic
+    reference:
+      resource: topics
+      fields:
+        - study
+        - name

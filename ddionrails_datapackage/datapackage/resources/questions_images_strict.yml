@@ -1,0 +1,19 @@
+# Tabular Data Resource: Questions images
+# ---------------------------------------
+# extends "questions_images.yml"
+
+schema:
+  foreignKeys:
+  # https://frictionlessdata.io/specs/table-schema/#foreign-keys
+  # Fields "study,instrument,question" point to
+  # fields "study,instrument,name" in resource "questions"
+  - fields:
+      - study
+      - instrument
+      - question
+    reference:
+      resource: questions
+      fields:
+        - study
+        - instrument
+        - name

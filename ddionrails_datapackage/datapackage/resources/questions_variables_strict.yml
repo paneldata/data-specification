@@ -1,0 +1,31 @@
+# Tabular Data Resource: Questions variables
+# ------------------------------------------
+# extends "questions_variables.yml"
+
+schema:
+  foreignKeys:
+  # https://frictionlessdata.io/specs/table-schema/#foreign-keys
+  # Fields "study,dataset,variable" point to
+  # fields "study,dataset,name" in resource "variables"
+  - fields:
+      - study
+      - dataset
+      - variable
+    reference:
+      resource: variables
+      fields:
+        - study
+        - dataset
+        - name
+  # Fields "study,instrument,question" point to
+  # fields "study,instrument,name" in resource "questions"
+  - fields:
+      - study
+      - instrument
+      - question
+    reference:
+      resource: questions
+      fields:
+        - study
+        - instrument
+        - name

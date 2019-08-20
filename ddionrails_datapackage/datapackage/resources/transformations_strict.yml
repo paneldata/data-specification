@@ -1,0 +1,31 @@
+# Tabular Data Resource: Transformations
+# --------------------------------------
+# extends "transformations.yml"
+
+schema:
+  foreignKeys:
+  # https://frictionlessdata.io/specs/table-schema/#foreign-keys
+  # Fields "origin_study,origin_dataset,origin_variable" point to
+  # fields "study,dataset,name" in resource "variables"
+  - fields:
+      - origin_study
+      - origin_dataset
+      - origin_variable
+    reference:
+      resource: variables
+      fields:
+        - study
+        - dataset
+        - name
+  # Fields "target_study,target_dataset,target_variable" point to
+  # fields "study,dataset,name" in resource "variables"
+  - fields:
+      - target_study
+      - target_dataset
+      - target_variable
+    reference:
+      resource: variables
+      fields:
+        - study
+        - dataset
+        - name
