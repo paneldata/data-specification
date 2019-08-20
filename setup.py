@@ -12,7 +12,7 @@ URL = "https://github.com/paneldata/data-specification"
 EMAIL = "hfuetterer@diw.de"
 AUTHOR = "Heinz-Alexander Fütterer"
 REQUIRES_PYTHON = ">=3.6.0"
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 KEYWORDS = ["datapackage", "paneldata", "ddionrails", "data-validation", "jsonschema"]
 LICENSE = "BSD 3-Clause"
 CLASSIFIERS = [
@@ -39,7 +39,11 @@ setup(
     url=URL,
     packages=find_packages(exclude=["tests"]),
     package_data={
-        "ddionrails_datapackage": ["datapackage/*.yml", "datapackage/resources/*.yml"]
+        "ddionrails_datapackage": [
+            "datapackage/*.yml",
+            "datapackage/resources/*.yml",
+            "jsonschema/*.json",
+        ]
     },
     entry_points={
         "console_scripts": ["ddionrails-datapackage=ddionrails_datapackage.cli:cli"]
