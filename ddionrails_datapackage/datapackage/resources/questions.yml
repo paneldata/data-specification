@@ -8,3 +8,46 @@ path: questions.csv
 # Optional Properties
 title: Questions
 description: A description about the questions.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: study
+      title: Foreign key to Study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: instrument
+      title: Foreign key to Instrument
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: name
+      title: Name of the Question
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    # TODO
+    # - scale
+    # - text
+    # - text_de
+    # - instruction
+    # - instruction_de
+    # - answer_list
+
+    # TODO: What else?
+
+  primaryKey:
+    - study
+    - instrument
+    - name

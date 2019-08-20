@@ -1,13 +1,13 @@
-# Tabular Data Resource: Datasets
-# -------------------------------
+# Tabular Data Resource: Instruments
+# ----------------------------------
 
 # Required Properties
-name: datasets
-path: datasets.csv
+name: instruments
+path: instruments.csv
 
 # Optional Properties
-title: Datasets
-description: A description about the datasets.csv file
+title: Instruments
+description: A description about the instruments.csv file
 
 # Field Descriptors
 # https://frictionlessdata.io/specs/table-schema/
@@ -22,7 +22,7 @@ schema:
         maxLength: 255
 
     - name: name
-      title: Name of the Dataset
+      title: Name of the Instrument
       type: string
       format: default
       constraints:
@@ -30,32 +30,27 @@ schema:
         maxLength: 255
 
     - name: label
-      title: Label of the Dataset (English)
+      title: Label of the Instrument (English)
       type: string
       format: default
 
     - name: label_de
-      title: Label of the Dataset (German)
+      title: Label of the Instrument (German)
       type: string
       format: default
 
     - name: description
-      title: Description of the Dataset (Markdown, English)
+      title: Description of the Instrument (Markdown, English)
       type: string
       format: default
 
     - name: description_de
-      title: Description of the Dataset (Markdown, German)
+      title: Description of the Instrument (Markdown, German)
       type: string
       format: default
 
     - name: analysis_unit
       title: Foreign key to analysis_unit
-      type: string
-      format: default
-
-    - name: conceptual_dataset
-      title: Foreign key to conceptual_dataset
       type: string
       format: default
 

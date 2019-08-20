@@ -11,7 +11,7 @@ schema:
       - study
       - instrument
     reference:
-      resource: questions
+      resource: instruments
       fields:
         - study
         - name
