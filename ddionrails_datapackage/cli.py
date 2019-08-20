@@ -25,8 +25,9 @@ def cli() -> None:
 @click.argument("config_file", type=click.Path(exists=True), default="config.yml")
 @click.argument("datapackage_location", type=click.Path(), default="datapackage.json")
 def build(config_file: str, datapackage_location: str) -> None:
-    """Builds a Tabular Data Resource from a configuration file.
+    """Builds a Tabular Data Package from a configuration file.
 
+    \b
     Args:
         config_file: The path to a configuration file.
         datapackage_location: The path to create the Tabular Data Package.
@@ -46,8 +47,9 @@ def build(config_file: str, datapackage_location: str) -> None:
 def infer(
     metadata_location: str, datapackage_location: str, strict: bool = False
 ) -> None:
-    """Infers a Tabular Data Resource from a given metadata location.
+    """Infers a Tabular Data Package from a given metadata location.
 
+    \b
     Args:
         metadata_location: The path to a metadata location.
         datapackage_location: The path to create the Tabular Data Package.
@@ -85,6 +87,7 @@ def validate(
 ) -> None:
     """Validates a Tabular Data Package or a single Tabular Data Resource.
 
+    \b
     Args:
         datapackage_location: The path to a Tabular Data Package.
         resource_name: The name of a single Tabular Data Resource to validate (optional).
