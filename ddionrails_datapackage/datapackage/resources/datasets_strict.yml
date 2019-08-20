@@ -1,0 +1,37 @@
+# Tabular Data Resource: Datasets
+# -------------------------------
+# extends "datasets.yml"
+
+schema:
+  foreignKeys:
+  # https://frictionlessdata.io/specs/table-schema/#foreign-keys
+  # Fields "study,analysis_unit" point to
+  # fields "study,name" in resource "analysis_units"
+  - fields:
+      - study
+      - analysis_unit
+    reference:
+      resource: analysis_units
+      fields:
+        - study
+        - name
+  # Fields "study,conceptual_dataset" point to
+  # fields "study,name" in resource "conceptual_datasets"
+  - fields:
+      - study
+      - conceptual_dataset
+    reference:
+      resource: conceptual_datasets
+      fields:
+        - study
+        - name
+  # Fields "study,period" point to
+  # fields "study,name" in resource "periods"
+  - fields:
+      - study
+      - period
+    reference:
+      resource: periods
+      fields:
+        - study
+        - name
