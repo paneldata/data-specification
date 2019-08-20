@@ -13,6 +13,14 @@ description: A description about the conceptual_datasets.csv file
 # https://frictionlessdata.io/specs/table-schema/
 schema:
   fields:
+    - name: study
+      title: Foreign key to Study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
     - name: name
       title: Name of the conceptual dataset
       type: string
