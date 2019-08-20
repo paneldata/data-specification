@@ -7,6 +7,7 @@ Tabular Data Package.
 
 from typing import Dict
 
+import frontmatter
 import goodtables.validate
 from datapackage import Package
 
@@ -30,3 +31,22 @@ def validate(datapackage_location: str, resource_name: str) -> Dict:
     return goodtables.validate(
         resource.source, schema=schema, order_fields=True, row_limit=-1
     )
+
+
+def validate_study_description(study_description_location: str):
+    """Validates a study description file (study.md).
+
+    Args:
+        study_description_location: The path to a study description file (study.md).
+
+    """
+
+    with open(study_description_location, "r") as infile:
+        jekyll_content = frontmatter.load(infile)
+
+    REQUIRED = {"name", "label", "config"}
+    OPTIONAL = {"doi"}
+    metadata_keys = set(jekyll_content.metadata.keys())
+
+    # TODO: Validate keys
+    # TODO: Validate content

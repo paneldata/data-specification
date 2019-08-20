@@ -25,7 +25,13 @@ CLASSIFIERS = [
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 
-REQUIRED = ["click>=7.0", "dpath", "goodtables>=2.0", "pyyaml>=5.0"]
+REQUIRED = [
+    "click>=7.0",
+    "dpath",
+    "goodtables>=2.0",
+    "python-frontmatter",
+    "pyyaml>=5.0",
+]
 
 setup(
     name=NAME,
