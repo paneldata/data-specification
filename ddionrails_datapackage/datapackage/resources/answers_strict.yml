@@ -1,0 +1,17 @@
+# Tabular Data Resource: Answers
+# ------------------------------
+# extends "answers.yml"
+
+schema:
+  foreignKeys:
+  # https://frictionlessdata.io/specs/table-schema/#foreign-keys
+  # Fields "study,instrument" point to
+  # fields "study,name" in resource "instruments"
+  - fields:
+      - study
+      - instrument
+    reference:
+      resource: instruments
+      fields:
+        - study
+        - name
