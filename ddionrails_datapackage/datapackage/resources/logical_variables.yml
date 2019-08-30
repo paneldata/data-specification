@@ -1,0 +1,53 @@
+# Tabular Data Resource: Logical variables
+# ----------------------------------------
+
+# Required Properties
+name: logical_variables
+path: logical_variables.csv
+
+# Optional Properties
+title: Logical variables
+description: A description about the logical_variables.csv file
+
+# Field Descriptors
+# https://frictionlessdata.io/specs/table-schema/
+schema:
+  fields:
+    - name: study
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: dataset
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: variable
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: instrument
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: question
+      type: string
+      format: default
+      constraints:
+        required: true
+        maxLength: 255
+
+    - name: item
+      type: string
+      format: default
