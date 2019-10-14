@@ -40,16 +40,18 @@ schema:
       type: string
       format: default
       constraints:
+        required: true
         maxLength: 20
 
     - name: label_de
       title: Label of the Period (German)
       description: >-
           Not used at the moment. This label will be displayed where period is used
-          in the german UI. Will be required, if there is an german UI.
+          in the german UI, which is not available.
       type: string
       format: default
       constraints:
+        required: true
         maxLength: 20
 
     - name: description
