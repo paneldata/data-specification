@@ -24,9 +24,9 @@ schema:
     - name: name
       title: Name of the Period
       description: >-
-          It is used in the faceted search and the tables for questionnaires and datasets.
-          In the faceted search, the list of periods of all studies is unique by name.
-          Period is a foreign key in questionnaires and datasets.
+        It is used in the faceted search and the tables for questionnaires and datasets.
+        In the faceted search, the list of periods of all studies is unique by name.
+        Period is a foreign key in questionnaires and datasets.
       type: string
       format: default
       constraints:
@@ -36,33 +36,35 @@ schema:
     - name: label
       title: Label of the Period (English)
       description: >-
-          This label is displayed where period is used in the english UI.
+        This label is displayed where period is used in the english UI.
       type: string
       format: default
       constraints:
+        required: true
         maxLength: 20
 
     - name: label_de
       title: Label of the Period (German)
       description: >-
-          Not used at the moment. This label will be displayed where period is used
-          in the german UI. Will be required, if there is an german UI.
+        Not used at the moment. This label will be displayed in the german UI,
+        when it becomes available, where period is used.
       type: string
       format: default
       constraints:
+        required: true
         maxLength: 20
 
     - name: description
       title: Description of the Period (Markdown, English)
       description: >-
-          Not used at the moment.
+        Not used at the moment.
       type: string
       format: default
 
     - name: description_de
       title: Description of the Period (Markdown, German)
       description: >-
-          Not used at the moment.
+        Not used at the moment.
       type: string
       format: default
 
