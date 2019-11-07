@@ -34,21 +34,21 @@ schema:
         required: true
         maxLength: 255
 
-    - name: image_url
+    - name: url
       type: string
       format: uri
 
-    - name: image_url_de
+    - name: url_de
       type: string
       format: uri
 
-    - name: image_label
+    - name: label
       type: string
       format: default
       constraints:
         maxLength: 40
 
-    - name: image_label_de
+    - name: label_de
       type: string
       format: default
       constraints:
@@ -58,7 +58,7 @@ schema:
     - study
     - instrument
     - question
-    - image_url
-    - image_url_de
-    - image_label
-    - image_label_de
+    - url
+    - url_de
+    - label
+    - label_de
