@@ -16,7 +16,7 @@ Or using [pipenv](https://github.com/pypa/pipenv):
 ```shell
 $ pip install --upgrade pipenv
 $ pipenv shell
-$ pipenv install git+https://github.com/paneldata/master@datapackage-directory#egg=ddionrails_datapackage
+$ pipenv install git+https://github.com/paneldata/data-specification@master#egg=ddionrails_datapackage
 ```
 
 ## Usage
