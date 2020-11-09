@@ -43,7 +43,6 @@ schema:
       format: default
       constraints:
         required: false
-        maxLength: 255
 
     - name: text
       title: The item's english text
