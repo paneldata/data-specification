@@ -37,17 +37,56 @@ schema:
         required: true
         maxLength: 255
 
-    # TODO
-    # - scale
-    # - text
-    # - text_de
-    # - instruction
-    # - instruction_de
-    # - answer_list
+    - name: item
+      title: A question's text content id
+      type: integer
+      format: default
+      constraints:
+        required: false
+        maxLength: 255
 
-    # TODO: What else?
+    - name: text
+      title: The item's english text
+      type: string
+      format: default
+      constraints:
+        required: false
 
-  primaryKey:
-    - study
-    - instrument
-    - name
+    - name: text_de
+      title: The item's german text
+      type: string
+      format: default
+      constraints:
+        required: false
+
+    - name: answer_list
+      type: string
+      format: default
+      constraints:
+        required: false
+
+    - name: instruction
+      type: string
+      format: default
+      constraints:
+        required: false
+
+    - name: instruction_de
+      type: string
+      format: default
+      constraints:
+        required: false
+
+    - name: goto
+      type: string
+      format: default
+      constraints:
+        required: false
+
+    - name: concept
+      title: The concept the question is linked to
+      type: string
+      format: default
+      constraints:
+        required: false
+        maxLength: 255
