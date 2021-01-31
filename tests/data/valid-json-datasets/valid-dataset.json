@@ -1,0 +1,9 @@
+[
+  {
+    "study": "some-study",
+    "dataset": "valid-dataset",
+    "name": "some-variable",
+    "label": "Some Variable",
+    "label_de": "Eine Variable"
+  }
+]

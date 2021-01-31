@@ -79,11 +79,7 @@ def test_cli_validate_with_valid_check_relations():
     """Tests that validate --check-relations follows foreign keys."""
     result = CliRunner().invoke(
         cli.cli,
-        [
-            "validate",
-            "tests/data/valid-relations/datapackage.json",
-            "--check-relations",
-        ],
+        ["validate", "tests/data/valid-relations/datapackage.json", "--check-relations"],
     )
     assert result.exit_code == 0
     assert '"valid": true' in result.output
@@ -102,3 +98,43 @@ def test_cli_validate_with_invalid_check_relations():
     assert result.exit_code == 0
     assert '"valid": true' in result.output
     assert "Foreign key" in result.output
+
+
+def test_cli_validate_datasets_without_argument():
+    result = CliRunner().invoke(cli.cli, "validate-datasets")
+    assert result.exit_code == 2
+    assert "Missing argument" in result.output
+
+
+def test_cli_validate_datasets():
+    result = CliRunner().invoke(
+        cli.cli, ["validate-datasets", "tests/data/valid-json-datasets"]
+    )
+    assert result.exit_code == 0
+
+
+def test_cli_validate_invalid_datasets():
+    result = CliRunner().invoke(
+        cli.cli, ["validate-datasets", "tests/data/invalid-json-datasets"]
+    )
+    assert result.exit_code == 1
+
+
+def test_cli_validate_instruments_without_argument():
+    result = CliRunner().invoke(cli.cli, "validate-instruments")
+    assert result.exit_code == 2
+    assert "Missing argument" in result.output
+
+
+def test_cli_validate_valid_instruments():
+    result = CliRunner().invoke(
+        cli.cli, ["validate-instruments", "tests/data/valid-json-instruments"]
+    )
+    assert result.exit_code == 0
+
+
+def test_cli_validate_invalid_instruments():
+    result = CliRunner().invoke(
+        cli.cli, ["validate-instruments", "tests/data/invalid-json-instruments"]
+    )
+    assert result.exit_code == 1

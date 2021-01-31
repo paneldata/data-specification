@@ -12,7 +12,7 @@ install:
   - pip install -e .
 script:
   - isort -c
-  - black --check .
+  - black --check --line-length=90 --target-version=py36 .
   - pyroma .
   - pylint --rcfile=setup.cfg ddionrails_datapackage tests
   - pytest -rf --cov

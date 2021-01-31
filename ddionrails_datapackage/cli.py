@@ -21,7 +21,7 @@ def cli() -> None:
     """ddionrails datapackage CLI"""
 
 
-@cli.command()
+@cli.command(short_help="Builds Tabular Data Package from config file")
 @click.argument("config_file", type=click.Path(exists=True), default="config.yml")
 @click.argument("datapackage_location", type=click.Path(), default="datapackage.json")
 def build(config_file: str, datapackage_location: str) -> None:
@@ -40,23 +40,23 @@ def build(config_file: str, datapackage_location: str) -> None:
         json.dump(package.descriptor, outfile, indent=2)
 
 
-@cli.command()
-@click.argument("metadata_location", type=click.Path(exists=True))
+@cli.command(short_help="Infers a Tabular Data Package from directory")
+@click.argument("metadata_directory", type=click.Path(exists=True))
 @click.argument("datapackage_location", type=click.Path(), default="datapackage.json")
 @click.option("--strict", is_flag=True, default=False)
 def infer(
-    metadata_location: str, datapackage_location: str, strict: bool = False
+    metadata_directory: str, datapackage_location: str, strict: bool = False
 ) -> None:
-    """Infers a Tabular Data Package from a given metadata location.
+    """Infers a Tabular Data Package from a given metadata directory.
 
     \b
     Args:
-        metadata_location: The path to a metadata location.
+        metadata_directory: The path to a metadata directory.
         datapackage_location: The path to create the Tabular Data Package.
         strict: Use stricter rules (if available).
 
     """
-    path = pathlib.Path(metadata_location)
+    path = pathlib.Path(metadata_directory)
     csv_files = [str(file.name) for file in sorted(path.glob("*.csv"))]
     if strict:
         including_strict = []
@@ -78,7 +78,7 @@ def infer(
         json.dump(package.descriptor, outfile, indent=2)
 
 
-@cli.command()
+@cli.command(short_help="Validates Tabular Data Package or Data Resource")
 @click.argument("datapackage_location", type=click.Path(exists=True))
 @click.argument("resource_name", type=click.Path(), required=False)
 @click.option("--check-relations", is_flag=True, default=False)
@@ -120,6 +120,32 @@ def validate(
 
     if not success:
         exit(1)
+
+
+@cli.command(short_help="Validates dataset JSON files")
+@click.argument("datasets_directory", type=click.Path(exists=True))
+def validate_datasets(datasets_directory: str) -> None:
+    """Validates dataset JSON files in datasets_location against JSON Schema.
+
+    \b
+    Args:
+        datasets_directory: The path to a directory containing dataset JSON files.
+
+    """
+    validator.validate_files(datasets_directory, "datasets")
+
+
+@cli.command(short_help="Validates instrument JSON files")
+@click.argument("instruments_directory", type=click.Path(exists=True))
+def validate_instruments(instruments_directory: str) -> None:
+    """Validates instrument JSON files in instruments_directory against JSON Schema.
+
+    \b
+    Args:
+        instruments_directory: The path to a directory containing instrument JSON files.
+
+    """
+    validator.validate_files(instruments_directory, "instruments")
 
 
 if __name__ == "__main__":
