@@ -122,5 +122,11 @@ def validate(
         exit(1)
 
 
+@cli.command()
+@click.argument("study_description_location", type=click.Path(exists=True))
+def validate_study_description(study_description_location) -> None:
+    validator.validate_study_description(study_description_location)
+
+
 if __name__ == "__main__":
     cli()
