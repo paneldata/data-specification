@@ -111,3 +111,10 @@ schema:
       constraints:
         required: false
         maxLength: 255
+
+    - name: scale
+      title: The type of the question item
+      type: string
+      format: default
+      constraints:
+        required: false
