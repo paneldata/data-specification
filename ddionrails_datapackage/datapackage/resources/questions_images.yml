@@ -53,12 +53,3 @@ schema:
       format: default
       constraints:
         maxLength: 40
-
-  primaryKey:
-    - study
-    - instrument
-    - question
-    - url
-    - url_de
-    - label
-    - label_de
