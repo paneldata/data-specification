@@ -117,7 +117,7 @@ def build(config: Dict) -> Package:
             else:
                 resource = read_tabular_data_resource(file)
         except FileNotFoundError:
-            # There might be files withour rules presen in the folder.
+            # There might be files without rules present in the folder.
             continue
         package.add_resource(resource)
     package.commit()
