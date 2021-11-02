@@ -108,13 +108,17 @@ def build(config: Dict) -> Package:
         # If a filename ends with "_strict"
         # create the basic Tabular Data Resource first
         # then add the "stricter" rules from the "_strict" file
-        if "_strict" in file:
-            basic_file = file.replace("_strict", "")
-            resource = read_tabular_data_resource(basic_file)
-            strict_resource = read_tabular_data_resource(file)
-            merge(resource, strict_resource)
-        else:
-            resource = read_tabular_data_resource(file)
+        try:
+            if "_strict" in file:
+                basic_file = file.replace("_strict", "")
+                resource = read_tabular_data_resource(basic_file)
+                strict_resource = read_tabular_data_resource(file)
+                merge(resource, strict_resource)
+            else:
+                resource = read_tabular_data_resource(file)
+        except FileNotFoundError:
+            # There might be files withour rules presen in the folder.
+            continue
         package.add_resource(resource)
     package.commit()
     if not package.valid:
