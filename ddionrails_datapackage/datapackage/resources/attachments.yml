@@ -76,12 +76,3 @@ schema:
       constraints:
         required: true
         maxLength: 80
-
-  primaryKey:
-    - study
-    - dataset
-    - variable
-    - instrument
-    - question
-    - url
-    - url_text
