@@ -16,3 +16,8 @@ pyroma = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-mock = "*"
+bandit = "*"
+mypy = "*"
+
+[packages]
+frictionless = "*"
