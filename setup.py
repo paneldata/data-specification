@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# pylint: disable=missing-module-docstring
 
 # Template used:
 # https://github.com/kennethreitz/setup.py
@@ -21,11 +21,10 @@ CLASSIFIERS = [
     "License :: OSI Approved :: BSD License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 
-REQUIRED = ["click>=7.0", "dpath", "goodtables>=2.0", "pyyaml>=5.0"]
+REQUIRED = ["click>=7.0", "dpath", "frictionless", "pyyaml>=5.0"]
 
 setup(
     name=NAME,
