@@ -37,19 +37,25 @@ schema:
     - name: url
       type: string
       format: uri
+      constraints:
+        required: false
 
     - name: url_de
       type: string
       format: uri
+      constraints:
+        required: false
 
     - name: label
       type: string
       format: default
       constraints:
         maxLength: 40
+        required: false
 
     - name: label_de
       type: string
       format: default
       constraints:
         maxLength: 40
+        required: false
